@@ -28,19 +28,20 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "usart.h"
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan;
 
 /* USER CODE BEGIN Private defines */
-
+extern uint32_t CAN_ID;
 /* USER CODE END Private defines */
 
 void MX_CAN_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void CAN_Config(void);
+void CAN_senddata(uint8_t* msg,uint8_t len);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

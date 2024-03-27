@@ -89,8 +89,10 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_USART1_UART_Init();
-  /* USER CODE BEGIN 2 */	
+  /* USER CODE BEGIN 2 */
 	HAL_UART_Receive_IT(&huart1,&Buffer,1);
+	CAN_Config();
+	UART1_printf("Initialize finished.\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */

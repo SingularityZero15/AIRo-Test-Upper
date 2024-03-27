@@ -123,6 +123,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart->Instance==USART1)
 	{
+		//UART1_printf("UART RX callback.\n");
+		
+		CAN_senddata(&Buffer, 1);
+		UART1_printf("UART report.\n");
 		HAL_UART_Transmit(&huart1, &Buffer, 1, 0xff);
 		HAL_UART_Receive_IT(&huart1,&Buffer,1);
 	}
